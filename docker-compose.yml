@@ -45,7 +45,7 @@ services:
       EMAIL_USER: noreply@example.com
       EMAIL_PASSWORD: changeme
       EMAIL_FROM: noreply@example.com
-      ADMIN_EMAIL: admin@admin
+      ADMIN_EMAIL: admin@admin.com
       ADMIN_PASSWORD: Admin$#12345
       ADMIN_FULL_NAME: Admin
     volumes:

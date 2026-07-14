@@ -41,4 +41,4 @@ Loaded **only** when you run `pnpm run seed` or `pnpm run seed:force` — not on
 | PATCH | `/api/admin/videos/:id` | Admin | Update video |
 | DELETE | `/api/admin/videos/:id` | Admin | Soft-deactivate video |
 
-Default admin (`admin@admin` / `Admin$#12345`) is created automatically on server start or `pnpm run seed` **only when no admin exists** in the database. Override via `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and `ADMIN_FULL_NAME` in `.env.dev`.
+Default admin (`admin@admin.com` / `Admin$#12345`) is created automatically on server start or `pnpm run seed` **only when no admin exists** in the database. Override via `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and `ADMIN_FULL_NAME` in `.env.dev`.
