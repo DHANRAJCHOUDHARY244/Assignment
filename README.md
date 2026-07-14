@@ -27,64 +27,6 @@ Admin is created automatically on server start / `pnpm run seed` **only when no 
 
 ---
 
-## Screenshots
-
-<p align="center">
-  <img src="screenshot/home-carousel.png" alt="Home — Socially Approved carousel" width="900" />
-</p>
-
-<p align="center"><b>Home — Socially Approved carousel</b></p>
-
-<p align="center">
-  <img src="screenshot/video-modal.png" alt="Video player modal" width="900" />
-</p>
-
-<p align="center"><b>Video player modal</b> (like / share / comments)</p>
-
-<p align="center">
-  <img src="screenshot/video-modal-loading.png" alt="Video modal loading" width="900" />
-</p>
-
-<p align="center"><b>Video modal — loading state</b></p>
-
-<p align="center">
-  <img src="screenshot/login-admin.png" alt="Login with admin credentials" width="700" />
-</p>
-
-<p align="center"><b>Login — admin credentials exposed</b></p>
-
-<p align="center">
-  <img src="screenshot/signup.png" alt="Sign up" width="700" />
-</p>
-
-<p align="center"><b>Sign up</b></p>
-
-<p align="center">
-  <img src="screenshot/admin-videos.png" alt="Admin videos" width="900" />
-</p>
-
-<p align="center"><b>Admin — Videos</b></p>
-
-<p align="center">
-  <img src="screenshot/admin-upload.png" alt="Admin create / upload video" width="700" />
-</p>
-
-<p align="center"><b>Admin — Create / upload video (chunked up to 2 GB)</b></p>
-
-<p align="center">
-  <img src="screenshot/admin-users.png" alt="Admin users" width="900" />
-</p>
-
-<p align="center"><b>Admin — Users</b></p>
-
-<p align="center">
-  <img src="screenshot/admin-user-activity.png" alt="Admin user activity" width="700" />
-</p>
-
-<p align="center"><b>Admin — User activity</b> (likes, shares, comments)</p>
-
----
-
 ## Tech stack
 
 | Layer | Stack |
@@ -276,9 +218,9 @@ To change admin or secrets, edit `docker-compose.yml` and rebuild/restart:
 docker compose up --build -d
 ```
 
-### 8. Seed dummy videos in Docker (optional)
+### 8. Seed default videos in Docker (optional)
 
-Compose does **not** auto-seed the sample video list. Admin is created on backend boot. To load dummy videos:
+Compose does **not** auto-seed the video list. Admin is created on backend boot. Default seed = **9 clips** in `backend/src/data/videos.dummy.json` (see **Default video seed** below).
 
 **Option A — Admin UI**  
 Log in → http://localhost:3000/admin → add / upload videos.
@@ -337,7 +279,8 @@ docker compose down -v       # also delete mongo + uploads volumes
 cd backend
 pnpm install
 # Edit .env.dev if needed (DATABASE_URL, JWT, ADMIN_*)
-pnpm run seed          # optional: dummy videos + ensure admin
+pnpm run seed          # optional: default 9 videos + ensure admin
+pnpm run seed:force    # replace all videos with default seed
 pnpm run dev           # http://localhost:5050
 ```
 
@@ -497,8 +440,8 @@ Covers pure helpers (e.g. carousel window math).
 | `pnpm run dev` | Dev server + hot reload (`.env.dev`) |
 | `pnpm run build` / `start` | Production build / run (`.env.prod`) |
 | `pnpm test` | Unit tests + coverage |
-| `pnpm run seed` | Seed videos (skip if present) + ensure admin |
-| `pnpm run seed:force` | Re-seed videos |
+| `pnpm run seed` | Seed **9 default videos** (skip if any videos exist) + ensure admin |
+| `pnpm run seed:force` | Delete all videos, then seed the 9 defaults again |
 | `pnpm run lint` | ESLint |
 
 **Frontend**
@@ -534,3 +477,79 @@ Layering is intentional: routes stay thin; Joi validates I/O; services own busin
 - Refresh tokens stored hashed; admin can block users  
 - Rate limit only on auth entry points to reduce credential stuffing without throttling media traffic  
 - Change default JWT secrets and admin password before real production deploy
+
+---
+
+## Default video seed
+
+Exact export from your DB (without `_id` / timestamps) lives in `backend/src/data/videos.dummy.json`.
+
+Includes **9 videos** with the same titles, descriptions, full `http://localhost:5050/uploads/...` URLs, and counts (e.g. Beautiful House: 1 like / 4 shares; Good morning: 1 comment).
+
+```bash
+cd backend
+pnpm run seed          # insert only if DB has no videos
+pnpm run seed:force    # wipe videos, then insert this exact set
+```
+
+Keep matching media files in `backend/uploads/videos` and `backend/uploads/thumbs`.
+
+---
+
+## Screenshots
+
+Images are in [`screenshot/`](./screenshot/).
+
+<p align="center">
+  <img src="screenshot/home-carousel.png" alt="Home — Socially Approved carousel" width="900" />
+</p>
+
+<p align="center"><b>Home — Socially Approved carousel</b></p>
+
+<p align="center">
+  <img src="screenshot/video-modal.png" alt="Video player modal" width="900" />
+</p>
+
+<p align="center"><b>Video player modal</b> (like / share / comments)</p>
+
+<p align="center">
+  <img src="screenshot/video-modal-loading.png" alt="Video modal loading" width="900" />
+</p>
+
+<p align="center"><b>Video modal — loading state</b></p>
+
+<p align="center">
+  <img src="screenshot/login-admin.png" alt="Login with admin credentials" width="700" />
+</p>
+
+<p align="center"><b>Login — admin credentials exposed</b></p>
+
+<p align="center">
+  <img src="screenshot/signup.png" alt="Sign up" width="700" />
+</p>
+
+<p align="center"><b>Sign up</b></p>
+
+<p align="center">
+  <img src="screenshot/admin-videos.png" alt="Admin videos" width="900" />
+</p>
+
+<p align="center"><b>Admin — Videos</b></p>
+
+<p align="center">
+  <img src="screenshot/admin-upload.png" alt="Admin create / upload video" width="700" />
+</p>
+
+<p align="center"><b>Admin — Create / upload video (chunked up to 2 GB)</b></p>
+
+<p align="center">
+  <img src="screenshot/admin-users.png" alt="Admin users" width="900" />
+</p>
+
+<p align="center"><b>Admin — Users</b></p>
+
+<p align="center">
+  <img src="screenshot/admin-user-activity.png" alt="Admin user activity" width="700" />
+</p>
+
+<p align="center"><b>Admin — User activity</b> (likes, shares, comments)</p>

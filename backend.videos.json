@@ -1,0 +1,189 @@
+[{
+  "_id": {
+    "$oid": "6a5634d5d5f9525efe0c8904"
+  },
+  "title": "Smily",
+  "description": "Helo life",
+  "url": "http://localhost:5050/uploads/videos/a32ac1f5-6016-4e93-82ff-cf623c584791.mp4",
+  "thumbnailUrl": "http://localhost:5050/uploads/thumbs/a32ac1f5-6016-4e93-82ff-cf623c584791.jpg",
+  "likesCount": 0,
+  "sharesCount": 0,
+  "commentsCount": 0,
+  "isActive": true,
+  "sortOrder": 0,
+  "createdAt": {
+    "$date": "2026-07-14T13:08:37.087Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-14T13:08:37.087Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a5634e8d5f9525efe0c8905"
+  },
+  "title": "Ocean",
+  "description": "Charming day",
+  "url": "http://localhost:5050/uploads/videos/f26be22f-6726-47e2-807c-028f7ea2d7a8.mp4",
+  "thumbnailUrl": "http://localhost:5050/uploads/thumbs/f26be22f-6726-47e2-807c-028f7ea2d7a8.jpg",
+  "likesCount": 0,
+  "sharesCount": 0,
+  "commentsCount": 0,
+  "isActive": true,
+  "sortOrder": 0,
+  "createdAt": {
+    "$date": "2026-07-14T13:08:56.868Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-14T13:08:56.868Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a5634fcd5f9525efe0c8906"
+  },
+  "title": "Play",
+  "description": "students enjoy",
+  "url": "http://localhost:5050/uploads/videos/90ddea61-cb73-4fa3-9e3d-2aba6ec8e6ac.mp4",
+  "thumbnailUrl": "http://localhost:5050/uploads/thumbs/90ddea61-cb73-4fa3-9e3d-2aba6ec8e6ac.jpg",
+  "likesCount": 0,
+  "sharesCount": 0,
+  "commentsCount": 0,
+  "isActive": true,
+  "sortOrder": 0,
+  "createdAt": {
+    "$date": "2026-07-14T13:09:16.912Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-14T13:09:16.912Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a563514d5f9525efe0c8907"
+  },
+  "title": "Bird",
+  "description": "liitle cute bird",
+  "url": "http://localhost:5050/uploads/videos/000d9032-8c6a-4293-a164-ec74dc988f62.mp4",
+  "thumbnailUrl": "http://localhost:5050/uploads/thumbs/000d9032-8c6a-4293-a164-ec74dc988f62.jpg",
+  "likesCount": 0,
+  "sharesCount": 0,
+  "commentsCount": 0,
+  "isActive": true,
+  "sortOrder": 0,
+  "createdAt": {
+    "$date": "2026-07-14T13:09:40.353Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-14T13:09:40.353Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a563539d5f9525efe0c8908"
+  },
+  "title": "Animal Lover",
+  "description": "Peacock",
+  "url": "http://localhost:5050/uploads/videos/8967966d-b63c-4df0-b87f-b8d0413fa001.mp4",
+  "thumbnailUrl": "http://localhost:5050/uploads/thumbs/8967966d-b63c-4df0-b87f-b8d0413fa001.jpg",
+  "likesCount": 0,
+  "sharesCount": 0,
+  "commentsCount": 0,
+  "isActive": true,
+  "sortOrder": 0,
+  "createdAt": {
+    "$date": "2026-07-14T13:10:17.671Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-14T13:10:17.671Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a563558d5f9525efe0c8909"
+  },
+  "title": "Beautiful House",
+  "description": "Building",
+  "url": "http://localhost:5050/uploads/videos/2324d395-d7b8-492f-a243-b91b6f8b6bd4.mp4",
+  "thumbnailUrl": "http://localhost:5050/uploads/thumbs/2324d395-d7b8-492f-a243-b91b6f8b6bd4.jpg",
+  "likesCount": 1,
+  "sharesCount": 4,
+  "commentsCount": 0,
+  "isActive": true,
+  "sortOrder": 0,
+  "createdAt": {
+    "$date": "2026-07-14T13:10:48.417Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-14T13:18:47.301Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a56357dd5f9525efe0c890a"
+  },
+  "title": "Country",
+  "description": "Beautiful country",
+  "url": "http://localhost:5050/uploads/videos/a2fc314d-7594-4bec-a684-711abe041596.mp4",
+  "thumbnailUrl": "http://localhost:5050/uploads/thumbs/a2fc314d-7594-4bec-a684-711abe041596.jpg",
+  "likesCount": 0,
+  "sharesCount": 0,
+  "commentsCount": 0,
+  "isActive": true,
+  "sortOrder": 0,
+  "createdAt": {
+    "$date": "2026-07-14T13:11:25.103Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-14T13:11:25.103Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a563599d5f9525efe0c890b"
+  },
+  "title": "Self lover",
+  "description": "hey",
+  "url": "http://localhost:5050/uploads/videos/b93e20a6-249f-44ff-80f3-11729dec3b44.mp4",
+  "thumbnailUrl": "http://localhost:5050/uploads/thumbs/b93e20a6-249f-44ff-80f3-11729dec3b44.jpg",
+  "likesCount": 0,
+  "sharesCount": 0,
+  "commentsCount": 0,
+  "isActive": true,
+  "sortOrder": 0,
+  "createdAt": {
+    "$date": "2026-07-14T13:11:53.296Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-14T13:11:53.296Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a56375ad5f9525efe0c8912"
+  },
+  "title": "Good morning",
+  "description": "Hello",
+  "url": "http://localhost:5050/uploads/videos/1b01b8e1-cefe-48d4-b8a4-3ac3e5962c87.mp4",
+  "thumbnailUrl": "http://localhost:5050/uploads/thumbs/1b01b8e1-cefe-48d4-b8a4-3ac3e5962c87.jpg",
+  "likesCount": 0,
+  "sharesCount": 0,
+  "commentsCount": 1,
+  "isActive": true,
+  "sortOrder": 0,
+  "createdAt": {
+    "$date": "2026-07-14T13:19:22.577Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-14T13:19:40.728Z"
+  },
+  "__v": 0
+}]

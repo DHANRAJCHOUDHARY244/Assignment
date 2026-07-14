@@ -17,8 +17,9 @@ Copy `.env.dev` and set `DATABASE_URL`, `JWT_SECRET`, `JWT_REFRESH_SECRET`, `COR
 
 ## Dummy video data
 
-Source file: `src/data/videos.dummy.json` (35 sample clips).  
+Source file: `src/data/videos.dummy.json` (9 default clips from local uploads).  
 Loaded **only** when you run `pnpm run seed` or `pnpm run seed:force` — not on `GET /api/videos`.
+Use `seed:force` to replace existing video documents with this default set.
 
 ## API
 

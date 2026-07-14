@@ -67,6 +67,4 @@ playwright-report/
 
 # Environment variables key
 .env.keys
-
-# Uploaded media
-uploads/
+/uploads/
