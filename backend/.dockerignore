@@ -1,0 +1,10 @@
+node_modules
+dist
+coverage
+uploads
+.git
+.husky
+.vscode
+*.log
+.env*
+!.env.example

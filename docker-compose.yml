@@ -1,0 +1,95 @@
+services:
+  mongo:
+    image: mongo:8
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - appnet
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mongosh",
+          "--quiet",
+          "--eval",
+          "db.adminCommand('ping').ok",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "5050:5050"
+    environment:
+      NODE_ENV: production
+      PORT: "5050"
+      LOG_LEVEL: info
+      APP_NAME: Backend
+      BASE_URL: http://localhost
+      DATABASE_URL: mongodb://mongo:27017/ass
+      CORS_ORIGINS: http://localhost:3000
+      JWT_SECRET: change-me-in-production-jwt-secret-min-32-chars
+      JWT_REFRESH_SECRET: change-me-in-production-refresh-secret-min-32
+      JWT_EXPIRES_IN: 15m
+      JWT_REFRESH_EXPIRES_IN: 15d
+      EMAIL_HOST: smtp.example.com
+      EMAIL_PORT: "587"
+      EMAIL_SECURE: "false"
+      EMAIL_USER: noreply@example.com
+      EMAIL_PASSWORD: changeme
+      EMAIL_FROM: noreply@example.com
+      ADMIN_EMAIL: admin@admin
+      ADMIN_PASSWORD: Admin$#12345
+      ADMIN_FULL_NAME: Admin
+    volumes:
+      - backend-uploads:/app/uploads
+    depends_on:
+      mongo:
+        condition: service_healthy
+    networks:
+      - appnet
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:5050/api/health').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:5050
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_URL: http://localhost:5050
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge
+
+volumes:
+  mongo-data:
+  backend-uploads:
