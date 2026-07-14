@@ -27,6 +27,64 @@ Admin is created automatically on server start / `pnpm run seed` **only when no 
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <img src="screenshot/home-carousel.png" alt="Home — Socially Approved carousel" width="900" />
+</p>
+
+<p align="center"><b>Home — Socially Approved carousel</b></p>
+
+<p align="center">
+  <img src="screenshot/video-modal.png" alt="Video player modal" width="900" />
+</p>
+
+<p align="center"><b>Video player modal</b> (like / share / comments)</p>
+
+<p align="center">
+  <img src="screenshot/video-modal-loading.png" alt="Video modal loading" width="900" />
+</p>
+
+<p align="center"><b>Video modal — loading state</b></p>
+
+<p align="center">
+  <img src="screenshot/login-admin.png" alt="Login with admin credentials" width="700" />
+</p>
+
+<p align="center"><b>Login — admin credentials exposed</b></p>
+
+<p align="center">
+  <img src="screenshot/signup.png" alt="Sign up" width="700" />
+</p>
+
+<p align="center"><b>Sign up</b></p>
+
+<p align="center">
+  <img src="screenshot/admin-videos.png" alt="Admin videos" width="900" />
+</p>
+
+<p align="center"><b>Admin — Videos</b></p>
+
+<p align="center">
+  <img src="screenshot/admin-upload.png" alt="Admin create / upload video" width="700" />
+</p>
+
+<p align="center"><b>Admin — Create / upload video (chunked up to 2 GB)</b></p>
+
+<p align="center">
+  <img src="screenshot/admin-users.png" alt="Admin users" width="900" />
+</p>
+
+<p align="center"><b>Admin — Users</b></p>
+
+<p align="center">
+  <img src="screenshot/admin-user-activity.png" alt="Admin user activity" width="700" />
+</p>
+
+<p align="center"><b>Admin — User activity</b> (likes, shares, comments)</p>
+
+---
+
 ## Tech stack
 
 | Layer | Stack |
@@ -48,6 +106,7 @@ Admin is created automatically on server start / `pnpm run seed` **only when no 
 ass/
 ├── docker-compose.yml          # mongo + backend + frontend
 ├── README.md                   # this file
+├── screenshot/                 # UI screenshots for this README
 │
 ├── backend/
 │   ├── Dockerfile
